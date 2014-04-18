@@ -6,7 +6,6 @@ var primesieve = (function() {
 
     root.spawn = function(cores, n, parallel) {
       // spawns workers to get primes
-
       var check = [];
 
       for(var i = 0; i < Math.floor(Math.sqrt(n)); i++) {
@@ -42,9 +41,10 @@ var primesieve = (function() {
             }
           }
 
+          return numbers;
+        }).then(function(numbers) {
+          // add numbers
           console.log('numbers>>>', numbers);
-
-          return '';
         });
       }
     };
