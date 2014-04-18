@@ -24,7 +24,25 @@ var primesieve = (function() {
         parallels.push(new parallel([i * part, (i + 1) * part, check]));
 
         parallels[i].spawn(function(range) {
-          console.log('range>>>', range);
+          var from = range.shift();
+
+          var to = range.shift();
+
+          var check = range.shift();
+
+          var numbers = [];
+
+          while(from < to) numbers.push(from++);
+
+          for(var i = 0, len = check.length; i < len; i++) {
+            var toCheck = check[i];
+
+            for(var j = 0, lenNumbers = numbers.length; j < lenNumbers; j++) {
+              if(!(numbers[j] % toCheck)) {numbers.splice(j, 1);}
+            }
+          }
+
+          console.log('numbers>>>', numbers);
 
           return '';
         });
@@ -35,4 +53,4 @@ var primesieve = (function() {
   return new Primesieve();
 })();
 
-exports.primesieve = primesieve;
+module.exports = primesieve;
