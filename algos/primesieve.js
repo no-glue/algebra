@@ -4,7 +4,7 @@ var primesieve = (function() {
 
     var root = this;
 
-    root.spawn = function(cores, n, parallel) {
+    root.spawn = function(cores, n, parallel, assure) {
       // spawns workers to get primes
       var check = [];
 
@@ -16,6 +16,14 @@ var primesieve = (function() {
       var part = Math.floor(n / cores);
 
       if(!parallel) parallel = require('paralleljs');
+
+      if(!assure) assure = require('assure');
+
+      var deferred = assure();
+
+      var complete = 0;
+
+      var primes = [];
 
       var parallels = [];
 
@@ -44,9 +52,15 @@ var primesieve = (function() {
           return numbers;
         }).then(function(numbers) {
           // add numbers
-          console.log('numbers>>>', numbers);
+          primes = primes.concat(numbers);
+
+          complete++;
+
+          if(complete === cores) deferred.resolve(primes);
         });
       }
+
+      return deferred;
     };
   };
 

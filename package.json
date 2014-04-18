@@ -13,6 +13,7 @@
   "author": "Nikola",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "paralleljs": "~0.2.1"
+    "paralleljs": "~0.2.1",
+    "assure": "~1.0.4"
   }
 }
