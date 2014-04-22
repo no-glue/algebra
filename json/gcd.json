@@ -1,0 +1,6 @@
+{
+  "deferred": false,
+  "algo": "gcd",
+  "method": "get",
+  "params": [12, 24]
+}

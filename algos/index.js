@@ -9,3 +9,7 @@ exports.primesieve = primesieve;
 var ackermann = require('./ackermann');
 
 exports.ackermann = ackermann;
+
+var gcd = require('./gcd');
+
+exports.gcd = gcd;
