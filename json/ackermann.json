@@ -1,0 +1,6 @@
+{
+  "deferred": false,
+  "algo": "ackermann",
+  "method": "get",
+  "params": [2, 2]
+}

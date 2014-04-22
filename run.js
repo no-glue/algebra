@@ -7,9 +7,15 @@ deferred.then(function(arg) {
 
   var algo = algos[json.algo];
 
-  var deferredAgain = algo[json.method].apply(algo, json.params);
+  if(algo.deferred) {
+    var deferredAgain = algo[json.method].apply(algo, json.params);
 
-  deferredAgain.then(function(arg) {
-    console.log('arg>>>', arg);
-  });
+    deferredAgain.then(function(arg) {
+      console.log('arg>>>', arg);
+    });
+  } else {
+    var out = algo[json.method].apply(algo, json.params);
+
+    console.log('arg>>>', out);
+  }
 });

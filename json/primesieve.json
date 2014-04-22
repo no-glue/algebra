@@ -1,0 +1,6 @@
+{
+  "deferred": true,
+  "algo": "primesieve",
+  "method": "spawn",
+  "params": [2, 10000]
+}
