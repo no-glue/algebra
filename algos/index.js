@@ -13,3 +13,7 @@ exports.ackermann = ackermann;
 var gcd = require('./gcd');
 
 exports.gcd = gcd;
+
+var upc = require('./upc');
+
+exports.upc = upc;
