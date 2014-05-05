@@ -1,0 +1,6 @@
+{
+  "deferred": false,
+  "algo": "isbn",
+  "method": "valid",
+  "params": [[0,5,3,4,9,1,5,0,0,0]]
+}

@@ -17,3 +17,7 @@ exports.gcd = gcd;
 var upc = require('./upc');
 
 exports.upc = upc;
+
+var isbn = require('./isbn');
+
+exports.isbn = isbn;
